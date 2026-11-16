@@ -1,174 +1,63 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'app_colors.dart';
 
 class AppStyles {
-
-  static TextStyle onboardingScreen(
-      {Color? color, FontWeight? fontWeight, double? letterSpacing, String? fontFamily}) {
-    return TextStyle(
-        color: color,
-        fontSize: 68.sp,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w700,
-        fontFamily: fontFamily);
-  }
-
-  static TextStyle onboardingScreenNormalText(
-      {Color? color, FontWeight? fontWeight, double? letterSpacing, String? fontFamily}) {
-    return TextStyle(
-        color: color,
-        fontSize: 48.sp,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
-
-  static TextStyle fontSize32(
-      {Color? color, FontWeight? fontWeight, double? letterSpacing, String? fontFamily}) {
-    return TextStyle(
-        color: color,
-        fontSize: 32.sp,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
-
-  static TextStyle fontSize28(
-      {Color? color, FontWeight? fontWeight, double? letterSpacing, String? fontFamily}) {
-    return TextStyle(
-        color: color,
-        fontSize: 28.sp,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
-
-  static TextStyle fontSize24(
-      {Color? color, FontWeight? fontWeight, double? letterSpacing, String? fontFamily}) {
-    return TextStyle(
-        color: color,
-        fontSize: 24.sp,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
-
-  static TextStyle fontSize20(
-      {Color? color, FontWeight? fontWeight, double? letterSpacing, String? fontFamily}) {
-    return TextStyle(
-        color: color,
-        fontSize: 20.sp,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
-
-  static TextStyle fontSize18({
+  static TextStyle _base({
+    required double size,
+    FontWeight fontWeight = FontWeight.normal,
     Color? color,
-    FontWeight? fontWeight,
     double? letterSpacing,
-    String? fontFamily,
-  }) {
-    return TextStyle(
-        color: color,
-        fontSize: 18.sp,
+  }) =>
+      TextStyle(
+        fontSize: size.sp,
+        fontWeight: fontWeight,
+        color: color ?? AppColors.textPrimary,
         letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
+      );
 
-  static TextStyle fontSize16(
-      {Color? color,
-        FontWeight? fontWeight,
-        TextDecoration? decoration,
-        double? letterSpacing,
-        double? height,
-        String? fontFamily}) {
-    return TextStyle(
-        fontSize: 16.sp,
-        color: color,
-        height: height,
-        letterSpacing: letterSpacing,
-        decoration: decoration,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
+  static TextStyle fontSize10({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 10, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
 
-  static TextStyle fontSize14(
-      {Color? color,
-        FontWeight? fontWeight,
-        double? letterSpacing,
-        double? height,
-        String? fontFamily}) {
-    return TextStyle(
-        fontSize: 14.sp,
-        color: color,
-        height: height,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
+  static TextStyle fontSize11({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 11, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
 
-  static TextStyle fontSize12(
-      {Color? color,
-        FontWeight? fontWeight,
-        double? letterSpacing,
-        double? height,
-        String? fontFamily,
-        TextDecoration? decoration}) {
+  static TextStyle fontSize12({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 12, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
 
-    return TextStyle(
-        fontSize: 12.sp,
-        color: color,
-        height: height,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily,
-        decoration: decoration
-    );
-  }
+  static TextStyle fontSize13({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 13, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
 
-  static TextStyle fontSize10(
-      {Color? color,
-        FontWeight? fontWeight,
-        double? letterSpacing,
-        double? height,
-        String? fontFamily}) {
-    return TextStyle(
-        fontSize: 10.sp,
-        color: color,
-        height: height,
-        letterSpacing: letterSpacing,
-        fontWeight: fontWeight ?? FontWeight.w400,
-        fontFamily: fontFamily);
-  }
+  static TextStyle fontSize14({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 14, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
 
-  static TextStyle customSize(
-      {Color? color,
-        required double size,
-        String? fontFamily,
-        double? letterSpacing,
-        double? height,
-        FontWeight? fontWeight}) {
-    return TextStyle(
-        fontWeight: fontWeight ?? FontWeight.w400,
-        color: color,
-        fontSize: size,
-        height: height,
-        letterSpacing: letterSpacing,
-        fontFamily: fontFamily);
-  }
+  static TextStyle fontSize15({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 15, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
 
-  static BoxShadow boxShadow =  BoxShadow(
-      blurRadius: 4,
-      offset: const Offset(0,0),
-      color:Color(0xFF292526).withOpacity(0.01),
-      spreadRadius:0);
+  static TextStyle fontSize16({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 16, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
 
-  static BoxShadow driverBoxShadow =  BoxShadow(
-      blurRadius: 128,
-      offset: const Offset(0,39),
-      color:Color(0xFFEBEBEB),
-      spreadRadius:0);
+  static TextStyle fontSize17({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 17, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
+
+  static TextStyle fontSize18({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 18, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
+
+  static TextStyle fontSize20({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 20, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
+
+  static TextStyle fontSize22({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 22, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
+
+  static TextStyle fontSize24({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 24, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
+
+  static TextStyle fontSize26({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 26, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
+
+  static TextStyle fontSize28({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 28, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
+
+  static TextStyle fontSize32({FontWeight fontWeight = FontWeight.normal, Color? color, double? letterSpacing}) =>
+      _base(size: 32, fontWeight: fontWeight, color: color, letterSpacing: letterSpacing);
 }

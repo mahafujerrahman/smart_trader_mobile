@@ -1,29 +1,42 @@
-
 import 'package:smart_trader_mobile/common_model/language_model.dart';
 
-class AppConstants{
+class AppConstants {
+  // Peanut Service
+  static const String peanutBaseUrl = 'https://peanut.ifxdb.com';
+  static const String isAccountCredentialsCorrect = '/api/ClientCabinetBasic/IsAccountCredentialsCorrect';
+  static const String getAccountInformation = '/api/ClientCabinetBasic/GetAccountInformation';
+  static const String getLastFourNumbersPhone = '/api/ClientCabinetBasic/GetLastFourNumbersPhone';
 
-  // Share preference Key
-  static String THEME ="theme";
-  static const String LANGUAGE_CODE = 'language_code';
-  static const String COUNTRY_CODE = 'country_code';
-  static RegExp emailValidator = RegExp(
-      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
-  static RegExp passwordValidator = RegExp(
-      r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-  );
-  static List<LanguageModel> languages = [
-    LanguageModel( languageName: 'Bengali', countryCode: 'BN', languageCode: 'bn'),
-    LanguageModel( languageName: 'English', countryCode: 'US', languageCode: 'en'),
+  // Partner Service
+  static const String partnerBaseUrl = 'https://client-api.contentdatapro.com';
+  static const String requestMobileToken = '/api/Authentication/RequestMoblieCabinetApiToken';
+  static const String getAnalyticSignals = '/clientmobile/GetAnalyticSignals';
+
+  // Promo SOAP Service
+  static const String promoSoapUrl = 'https://api-forexcopy.contentdatapro.com/Services/CabinetMicroService.svc';
+  static const String promoImageBaseUrl = 'https://forex-images.ifxdb.com';
+
+  // SharedPreferences Keys
+  static const String peanutTokenKey = 'peanut_token';
+  static const String partnerTokenKey = 'partner_token';
+  static const String userLoginKey = 'user_login';
+  static const String isLoggedInKey = 'is_logged_in';
+  static const String tokenExpiryKey = 'token_expiry';
+  static const String userPasswordKey = 'user_password';
+
+  // Trading Systems
+  static  int tradingSystem = 3;
+
+  static  List<String> availablePairs = [
+    'EURUSD',
+    'GBPUSD',
+    'USDJPY',
+    'USDCHF',
+    'USDCAD',
+    'AUDUSD',
+    'NZDUSD',
   ];
 
-//=================>> App Data <<=============================
-  static String isLogged = "IsLogged";
-  static const String bearerToken = "BearerToken";
-  static const String verificationToken = "VerificationToken";
-  static const String userRole = "UserRole";
 
-
+  static List<LanguageModel> languages = [LanguageModel(languageCode: 'en', countryCode: 'US')];
 }
-
-enum Role {transmission_hqinventoryadmin, transmission_admin,transmission_supervisor,transmission_surveyor,transmission_technician}
