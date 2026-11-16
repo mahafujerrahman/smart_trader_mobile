@@ -42,7 +42,6 @@ class InitialBinding extends Bindings {
     Get.lazyPut<PromoRepository>(() => PromoRepositoryImpl(Get.find<PromoRemoteDataSource>()), fenix: true);
     Get.lazyPut<PromoController>(() => PromoController(Get.find<PromoRepository>()), fenix: true);
 
-
     Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
   }
 }

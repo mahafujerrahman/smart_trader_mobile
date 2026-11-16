@@ -1,5 +1,4 @@
 class DateParser {
-  // Parse date string to DateTime object
   DateTime parseDate(String dateString) {
 
     List<String> parts = dateString.split('-');
@@ -11,8 +10,6 @@ class DateParser {
     return DateTime(year, month, day);
   }
 
-
-  // Generate date parser calls
   static List<String> generateDateParserCalls(List<dynamic> data) {
     List<String> dateCalls = [];
 
